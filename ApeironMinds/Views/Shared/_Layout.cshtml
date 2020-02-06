@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body data-spy="scroll">
+    <!--=========Login=========-->
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <label id="loginTxt">Login</label>
+                    <label id="registerTxt">Register</label>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group" id="loginForm">
+                        <input type="text" id="loginUser" name="Username" class="form-control" placeholder="Enter Username" />
+                        <br>
+                        <input type="password" id="loginPass" name="Password" class="form-control" placeholder="Enter Password" />
+                        <br>
+                        <button type="submit" id="" name="submit" class="btn">Login</button><br><br>
+                        <label>If you are New User <a href="#" id="clickRegister">Register Now</a></label>
+                    </div>
+                    <div class="form-group" id="registerForm">
+                        <input type="text" id="registerUser" name="Username" class="form-control" placeholder="Enter Username" />
+                        <br>
+                        <input type="password" id="registerPass" name="Password" class="form-control" placeholder="Enter Password" />
+                        <br>
+                        <input type="password" id="registerCpass" name="Password" class="form-control" placeholder="Confirm Password" />
+                        <br>
+                        <button type="submit" id="" name="submit" class="btn">Register</button><br><br>
+                        <label>If you are Existing User <a href="#" id="clickLogin">Login Now</a></label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--========Login End==========-->
+    <!-- ==========  Header  ========== -->
+    <header class="main-header">
+        <nav id="Wedding_menu" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/retina/logo.png" class="logo" alt="logo" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#Banner"><figure><img src="images/retina/menu-icon/home.png" alt="Home" /></figure><span>Home</span></a></li>
+                        <li><a href="#Bridegroom"><figure><img src="images/retina/menu-icon/couple.png" alt="Home" /></figure><span>About</span></a></li>
+                        <li><a href="#Events"><figure><img src="images/retina/menu-icon/event.png" alt="Home" /></figure><span>Events</span></a></li>
+                        <li><a href="#Gallery"><figure><img src="images/retina/menu-icon/gallery.png" alt="Home" /></figure><span>What we do</span></a></li>
+                        <li><a href="myModal" data-toggle="modal" data-target="#myModal"><figure><img src="images/retina/menu-icon/login.png" alt="login" /></figure><span>Login</span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <!-- ==========  /Header  ========== -->
+    <!-- ==========  Banner  ========== -->
+    <div class="body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/js")
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>
